@@ -46,7 +46,7 @@ parser.add_argument(
 )
 parser.add_argument(
     '--objs_folder',
-    default='models/',
+    default=os.path.join(os.path.dirname(__file__), 'models_hope'),
     help = "object to load folder"
 )
 parser.add_argument(
@@ -56,7 +56,7 @@ parser.add_argument(
 )
 parser.add_argument(
     '--scale',
-    default=1,
+    default=0.01,
     type=float,
     help='Specify the scale of the target object(s). If the obj mesh is in '
          'meters -> scale=1; if it is in cm -> scale=0.01.'
@@ -396,17 +396,21 @@ def adding_mesh_object(
         names_to_export.append(entity_name)
         add_cuboid(entity_name, scale=scale, debug=debug)
 
-google_content_folder = glob.glob(opt.objs_folder_distrators + "*/")
+google_content_folder = glob.glob(os.path.join(opt.objs_folder_distrators, "*/"))
 
 for i_obj in range(int(opt.nb_distractors)):
 
-    toy_to_load = google_content_folder[random.randint(0,len(google_content_folder)-1)]
+    toy_to_load = google_content_folder[random.randint(0, len(google_content_folder) - 1)]
+    print("Toy to load: " + toy_to_load)
 
-    obj_to_load = os.path.join(toy_to_load, "meshes", "model.obj")
-    texture_to_load = os.path.join(toy_to_load, "materials", "textures", "texture.png")
-    name = "google_" + os.path.basename(os.path.normpath(toy_to_load)) + f"_{i_obj}"
+    if os.path.isdir(toy_to_load):
+        obj_to_load = os.path.join(toy_to_load, "meshes", "model.obj")
+        texture_to_load = os.path.join(toy_to_load, "materials", "textures", "texture.png")
+        name = "google_" + os.path.basename(os.path.normpath(toy_to_load)) + f"_{i_obj}"
 
-    adding_mesh_object(name, obj_to_load, texture_to_load, debug=opt.debug)
+        adding_mesh_object(name, obj_to_load, texture_to_load, debug=opt.debug)
+    else:
+        print(f"Skipping {toy_to_load}, not a directory.")
 
 if opt.path_single_obj is not None:
     for i_object in range(opt.nb_objects):
@@ -424,17 +428,25 @@ if opt.path_single_obj is not None:
                            scale=opt.scale,
                            debug=opt.debug)
 else:
-    google_content_folder = glob.glob(opt.objs_folder + "*/")
+    google_content_folder = glob.glob(os.path.join(opt.objs_folder,"*/"))
 
     for i_obj in range(int(opt.nb_objects)):
         toy_to_load = google_content_folder[random.randint(0, len(google_content_folder) - 1)]
 
-        obj_to_load = toy_to_load + "/google_16k/textured.obj"
-        texture_to_load = toy_to_load + "/google_16k/texture_map_flat.png"
-        model_info_path = toy_to_load + "/google_16k/model_info.json"
-        name = "hope_" + toy_to_load.split('/')[-2] + f"_{i_obj}"
+        if os.path.isdir(toy_to_load):            
 
-        adding_mesh_object(name, obj_to_load, texture_to_load, model_info_path, scale=opt.scale, debug=opt.debug)
+            # 'toy_to_load' is now guaranteed to be a directory
+            obj_name = os.path.basename(os.path.normpath(toy_to_load))
+
+            obj_to_load      = os.path.join(toy_to_load, obj_name + ".obj")
+            texture_to_load  = os.path.join(toy_to_load, obj_name + ".jpg")
+            model_info_path  = os.path.join(toy_to_load, obj_name + ".json")
+            name = f"{obj_name}_{i_obj}"
+
+            print("obj_name:", obj_name)
+            print("obj_to_load:", obj_to_load)
+
+            adding_mesh_object(name, obj_to_load, texture_to_load, model_info_path, scale=opt.scale, debug=opt.debug)
 
         # p.applyExternalTorque(id_pybullet,-1,
         #     [   random.uniform(-force_rand,force_rand),

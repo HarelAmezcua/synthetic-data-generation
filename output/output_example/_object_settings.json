@@ -1,0 +1,96 @@
+{
+    "exported_object_classes": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "Germanium_GE132",
+        "Horses_in_Pink_Pencil_Case",
+        "Logitech_Ultimate_Ears_Boom_Wireless_Speaker_Night_Black",
+        "Office_Depot_HP_71_Remanufactured_Ink_Cartridge_Black",
+        "Olive_Kids_Birdie_Lunch_Box"
+    ],
+    "exported_objects": [
+        {
+            "class": "0",
+            "cuboid_dimensions": [
+                64.63214111328125,
+                148.32894897460938,
+                43.479248046875
+            ]
+        },
+        {
+            "class": "1",
+            "cuboid_dimensions": [
+                122.74560546875,
+                167.24276733398438,
+                40.15216064453125
+            ]
+        },
+        {
+            "class": "2",
+            "cuboid_dimensions": [
+                83.49760437011719,
+                49.47174835205078,
+                29.923309326171875
+            ]
+        },
+        {
+            "class": "3",
+            "cuboid_dimensions": [
+                66.05572509765625,
+                83.55461120605469,
+                71.12054443359375
+            ]
+        },
+        {
+            "class": "4",
+            "cuboid_dimensions": [
+                66.10208892822266,
+                58.03911590576172,
+                70.90850830078125
+            ]
+        },
+        {
+            "class": "Germanium_GE132",
+            "cuboid_dimensions": [
+                0.04391399770975113,
+                0.04393500089645386,
+                0.07737600058317184
+            ]
+        },
+        {
+            "class": "Horses_in_Pink_Pencil_Case",
+            "cuboid_dimensions": [
+                0.21417000889778137,
+                0.09265699982643127,
+                0.08866400271654129
+            ]
+        },
+        {
+            "class": "Logitech_Ultimate_Ears_Boom_Wireless_Speaker_Night_Black",
+            "cuboid_dimensions": [
+                0.10584500432014465,
+                0.10400199890136719,
+                0.26066601276397705
+            ]
+        },
+        {
+            "class": "Office_Depot_HP_71_Remanufactured_Ink_Cartridge_Black",
+            "cuboid_dimensions": [
+                0.08601000159978867,
+                0.05043900012969971,
+                0.11746200174093246
+            ]
+        },
+        {
+            "class": "Olive_Kids_Birdie_Lunch_Box",
+            "cuboid_dimensions": [
+                0.26707300543785095,
+                0.10294300317764282,
+                0.21418899297714233
+            ]
+        }
+    ]
+}

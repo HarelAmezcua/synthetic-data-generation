@@ -1096,6 +1096,9 @@ def export_to_ndds_folder_settings_files(
         "exported_objects": [exported_objects[class_name] for class_name in exported_object_classes]
     }
     object_settings_filename = output_folder + "/_object_settings.json"
+    print("exported_objects:", exported_objects)
+    print("exported_object_classes:", exported_object_classes)
+
     with open(object_settings_filename, 'w') as fp:
         json.dump(dict_out, fp, indent=4)
 
