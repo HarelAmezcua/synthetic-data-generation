@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "Persona_Q_Shadow_of_the_Labyrinth_Nintendo_3DS"
+description: "Persona Q: Shadow of the Labyrinth [Nintendo 3DS]"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Atlus"
+}
+annotations {
+  key: "gtin"
+  value: "00730865300174"
+}
+annotations {
+  key: "sku"
+  value: "00730865300174"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Media Cases"
+}

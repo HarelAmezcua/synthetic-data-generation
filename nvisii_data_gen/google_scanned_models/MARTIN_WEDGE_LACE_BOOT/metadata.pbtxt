@@ -1,0 +1,39 @@
+model {
+  file: "model.sdf"
+}
+name: "MARTIN_WEDGE_LACE_BOOT"
+description: "MARTIN WEDGE LACE BOOT\n*Lace boot in waterproof leather upper. *Fully lined. *Leather welt. *Vibram bottom for traction and comfort."
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Cole Haan"
+}
+annotations {
+  key: "gtin"
+  value: "718746839739"
+}
+annotations {
+  key: "mpn"
+  value: "c12016"
+}
+annotations {
+  key: "sku"
+  value: "CH 31"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Shoe"
+}

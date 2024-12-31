@@ -1,0 +1,39 @@
+model {
+  file: "model.sdf"
+}
+name: "D_ROSE_773_II_hvInJwJ5HUD"
+description: "D ROSE 773 II"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Adidas"
+}
+annotations {
+  key: "gtin"
+  value: "886840492300"
+}
+annotations {
+  key: "mpn"
+  value: "q33235"
+}
+annotations {
+  key: "sku"
+  value: "Q33235"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Shoe"
+}

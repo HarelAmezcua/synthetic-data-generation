@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "Jarrow_Glucosamine_Chondroitin_Combination_120_Caps"
+description: "Jarrow Glucosamine + Chondroitin Combination 120 Caps"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Jarrow"
+}
+annotations {
+  key: "gtin"
+  value: "00790011190196"
+}
+annotations {
+  key: "sku"
+  value: "00790011190196"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Bottles and Cans and Cups"
+}

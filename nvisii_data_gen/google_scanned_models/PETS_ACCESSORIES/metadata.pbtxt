@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "PETS_ACCESSORIES"
+description: "PETS & ACCESSORIES\nThis set includes a dog and kennel, a cat, a rabbit and feeding bowls."
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "PlanToys"
+}
+annotations {
+  key: "mpn"
+  value: "7314"
+}
+annotations {
+  key: "sku"
+  value: "0731401"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Toys"
+}

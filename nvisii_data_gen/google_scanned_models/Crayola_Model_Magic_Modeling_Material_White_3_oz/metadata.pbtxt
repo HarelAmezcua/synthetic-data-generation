@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "Crayola_Model_Magic_Modeling_Material_White_3_oz"
+description: "Crayola Model Magic Modeling Material, White - 3 oz"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Crayola"
+}
+annotations {
+  key: "gtin"
+  value: "00071662024055"
+}
+annotations {
+  key: "sku"
+  value: "00071662024055"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Consumer Goods"
+}

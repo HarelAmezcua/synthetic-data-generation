@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "BUNNY_RATTLE"
+description: "BUNNY RATTLE\nLittle Bunny Rattle makes a bell sound which stimulate baby\'s sound exploring and also enhances hand-eye coordination."
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "PlanToys"
+}
+annotations {
+  key: "mpn"
+  value: "5214"
+}
+annotations {
+  key: "sku"
+  value: "0521400"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Toys"
+}

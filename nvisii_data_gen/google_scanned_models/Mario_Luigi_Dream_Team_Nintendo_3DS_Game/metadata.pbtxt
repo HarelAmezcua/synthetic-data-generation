@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "Mario_Luigi_Dream_Team_Nintendo_3DS_Game"
+description: "Mario & Luigi: Dream Team [Nintendo 3DS Game]"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "AlphaDream Corporation, Ltd."
+}
+annotations {
+  key: "gtin"
+  value: "00045496742461"
+}
+annotations {
+  key: "sku"
+  value: "00045496742461"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Media Cases"
+}

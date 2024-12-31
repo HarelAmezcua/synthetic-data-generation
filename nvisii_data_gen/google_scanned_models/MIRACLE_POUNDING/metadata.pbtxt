@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "MIRACLE_POUNDING"
+description: "MIRACLE POUNDING\nAs the ball is pounded with the wooden mallet, a new ball comes up to replace it. Great for developing hand-eye coordination."
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "PlanToys"
+}
+annotations {
+  key: "mpn"
+  value: "5315"
+}
+annotations {
+  key: "sku"
+  value: "0531501"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Toys"
+}

@@ -1,0 +1,39 @@
+model {
+  file: "model.sdf"
+}
+name: "PureConnect_2_Color_FernNightlifeSilverBlack_Size_70_5w0BYsiogeV"
+description: "PureConnect 2, Color: Fern/Nightlife/Silver/Black, Size: 7.0\nEmbrace the ground beneath you with the featherweight feel and pliable flex of the PureConnect 2. This slim and nimble turn-hugger is the perfect fit when you crave less shoe and more freedom. A split toe groove extends toward the midfoot, engaging the natural movement of the foot and letting you feel every nuance of the run. With rad looks, the baby is ready to run, right out of the box. Just like our core line, we hold PureProject to the industry\'s highest weartest and durability standards. Because of their lightweight construction and fewer materials, runners should generally expect shoes from the PureProject line to last approximately 250-300 miles. > See the Women\'s PureConnect 2Category: Neutral Weight: 7.2 oz Platform: Anatomical Last Construction: Stroebel Launch Date: January 1, 2013 Technologies &bull; BioMoGo DNA Midsole &bull; IDEAL Heel &bull; Toe Flex &bull; Nav Band &bull; Anatomical Last"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Brooks Running"
+}
+annotations {
+  key: "gtin"
+  value: "00883439716403"
+}
+annotations {
+  key: "mpn"
+  value: "1101381d574.070"
+}
+annotations {
+  key: "sku"
+  value: "1101381D574.070"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Shoe"
+}

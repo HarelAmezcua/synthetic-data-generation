@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "Dell_Series_9_Color_Ink_Cartridge_MK993_High_Yield"
+description: "Dell Series 9 Color Ink Cartridge (MK993), High Yield"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Dell"
+}
+annotations {
+  key: "gtin"
+  value: "00884116064350"
+}
+annotations {
+  key: "sku"
+  value: "00884116064350"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Consumer Goods"
+}

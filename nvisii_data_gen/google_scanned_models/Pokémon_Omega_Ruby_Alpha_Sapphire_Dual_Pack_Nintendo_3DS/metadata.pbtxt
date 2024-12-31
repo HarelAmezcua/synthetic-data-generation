@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "Pok\303\251mon_Omega_Ruby_Alpha_Sapphire_Dual_Pack_Nintendo_3DS"
+description: "Pok\303\251mon: Omega Ruby + Alpha Sapphire Dual Pack [Nintendo 3DS]"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Nintendo"
+}
+annotations {
+  key: "gtin"
+  value: "00045496743062"
+}
+annotations {
+  key: "sku"
+  value: "45496743062"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Consumer Goods"
+}

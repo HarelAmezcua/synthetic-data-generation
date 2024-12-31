@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "Tieks_Ballet_Flats_Diamond_White_Croc"
+description: "Tieks Ballet Flats, Diamond White Croc\nAdd classic elegance to your wardrobe with these chic, patent crocodile print ballet flats. A favorite among brides. Made with premium, soft, top-grain Italian leather. Non-elasticized, cushioned back and padded instep. Foldable split-sole design for ultimate portability. Signature Tiek Blue stripes and durable, non-skid rubber soles."
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Tieks by Gavrieli"
+}
+annotations {
+  key: "mpn"
+  value: "89"
+}
+annotations {
+  key: "sku"
+  value: "89"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Shoe"
+}

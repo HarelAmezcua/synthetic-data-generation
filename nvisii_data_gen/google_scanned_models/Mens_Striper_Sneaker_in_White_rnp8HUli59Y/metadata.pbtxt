@@ -1,0 +1,39 @@
+model {
+  file: "model.sdf"
+}
+name: "Mens_Striper_Sneaker_in_White_rnp8HUli59Y"
+description: "Men\'s Striper Sneaker in White\nMen\'s Striper Sneaker"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Sperry Top-Sider"
+}
+annotations {
+  key: "gtin"
+  value: "044211438368"
+}
+annotations {
+  key: "mpn"
+  value: "0567057"
+}
+annotations {
+  key: "sku"
+  value: "StriperSneakerF0501-7"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Shoe"
+}

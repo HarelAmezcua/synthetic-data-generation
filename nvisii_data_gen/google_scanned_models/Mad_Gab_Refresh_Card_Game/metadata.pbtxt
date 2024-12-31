@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "Mad_Gab_Refresh_Card_Game"
+description: "Mad Gab Refresh Card Game"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Mattel Games"
+}
+annotations {
+  key: "gtin"
+  value: "00746775059262"
+}
+annotations {
+  key: "sku"
+  value: "746775059262"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Board Games"
+}

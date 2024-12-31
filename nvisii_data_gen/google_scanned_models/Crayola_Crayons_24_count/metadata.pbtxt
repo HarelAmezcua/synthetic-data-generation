@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "Crayola_Crayons_24_count"
+description: "Crayola Crayons - 24 count"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Crayola"
+}
+annotations {
+  key: "gtin"
+  value: "071662000240"
+}
+annotations {
+  key: "sku"
+  value: "071662000240"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Consumer Goods"
+}

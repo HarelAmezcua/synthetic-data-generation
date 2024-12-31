@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "HP_Card_Invitation_Kit"
+description: "HP Card & Invitation Kit"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "HP"
+}
+annotations {
+  key: "gtin"
+  value: "00888793969694"
+}
+annotations {
+  key: "sku"
+  value: "00888793969694"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Consumer Goods"
+}

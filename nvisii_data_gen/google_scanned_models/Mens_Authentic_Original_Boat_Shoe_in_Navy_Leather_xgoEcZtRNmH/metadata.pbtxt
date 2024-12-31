@@ -1,0 +1,39 @@
+model {
+  file: "model.sdf"
+}
+name: "Mens_Authentic_Original_Boat_Shoe_in_Navy_Leather_xgoEcZtRNmH"
+description: "Men\'s Authentic Original Boat Shoe in Navy Leather\nMen\'s Authentic Original Boat Shoe"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Sperry Top-Sider"
+}
+annotations {
+  key: "gtin"
+  value: "044211860237"
+}
+annotations {
+  key: "mpn"
+  value: "0191312"
+}
+annotations {
+  key: "sku"
+  value: "AuthenticOriginalS1001-7"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Shoe"
+}

@@ -1,0 +1,39 @@
+model {
+  file: "model.sdf"
+}
+name: "Mens_Tremont_Kiltie_Tassel_Loafer_in_Black_Amaretto"
+description: "Men\'s Tremont Kiltie Tassel Loafer in Black Amaretto\nMen\'s Tremont Kiltie Tassel Loafer"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Sperry Top-Sider"
+}
+annotations {
+  key: "gtin"
+  value: "044211542096"
+}
+annotations {
+  key: "mpn"
+  value: "0717132"
+}
+annotations {
+  key: "sku"
+  value: "TremontKiltieF05-7"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Shoe"
+}

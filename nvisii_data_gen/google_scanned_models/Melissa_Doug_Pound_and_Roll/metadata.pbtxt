@@ -1,0 +1,35 @@
+model {
+  file: "model.sdf"
+}
+name: "Melissa_Doug_Pound_and_Roll"
+description: "Melissa & Doug Pound and Roll"
+version: 1
+authors {
+  name: "Google"
+  email: "scanned-objects@google.com"
+}
+legal {
+  copyright: "Copyright 2020 Google LLC."
+  license: "Creative Commons Attribution 4.0 International"
+}
+annotations {
+  key: "brand"
+  value: "Melissa"
+}
+annotations {
+  key: "gtin"
+  value: "00000772086257"
+}
+annotations {
+  key: "sku"
+  value: "00000772086257"
+}
+compatibilities {
+  name: "Gazebo"
+  version {
+    major: 11
+  }
+}
+categories {
+  first: "Consumer Goods"
+}
