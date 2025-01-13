@@ -1091,6 +1091,9 @@ def export_to_ndds_folder_settings_files(
         exported_objects[class_name] = {"class": class_name,
                                         "cuboid_dimensions": [bbox_size[0], bbox_size[1], bbox_size[2]]}
     exported_object_classes.sort()
+
+    print("exported_objects:", exported_objects)
+    print("exported_object_classes:", exported_object_classes)
     dict_out = {
         "exported_object_classes": exported_object_classes,
         "exported_objects": [exported_objects[class_name] for class_name in exported_object_classes]

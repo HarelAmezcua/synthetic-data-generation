@@ -51,7 +51,7 @@ parser.add_argument(
 )
 parser.add_argument(
     '--path_single_obj',
-    default=None,
+     default=os.path.join(os.path.dirname(__file__), 'single_objects\\Crackers'),
     help='If you have a single obj file, path to the obj directly.'
 )
 parser.add_argument(
@@ -70,18 +70,18 @@ parser.add_argument(
 
 parser.add_argument(
     '--nb_objects',
-    default=5,
+    default=1,
     type = int,
     help = "how many objects"
 )
 parser.add_argument(
     '--nb_distractors',
-    default=5,
+    default=0,
     help = "how many objects"
 )
 parser.add_argument(
     '--nb_frames',
-    default=2000,
+    default=10000,
     help = "how many frames to save"
 )
 parser.add_argument(
@@ -122,7 +122,7 @@ parser.add_argument(
 
 parser.add_argument(
     '--box_size',
-    default=0.5,
+    default=0.1,
     type=float,
     help = "make the object movement easier"
 )
@@ -229,10 +229,12 @@ visii.set_camera_entity(camera)
 
 # lets turn off the ambiant lights
 # load a random skybox
-skyboxes = glob.glob(f'{opt.skyboxes_folder}/*.hdr')
-skybox_random_selection = skyboxes[random.randint(0,len(skyboxes)-1)]
+#skyboxes = glob.glob(f'{opt.skyboxes_folder}/*.hdr')
+#skybox_random_selection = skyboxes[random.randint(0,len(skyboxes)-1)]
+specific_skybox = f"{opt.skyboxes_folder}/autumn_field_puresky_1k.hdr"
 
-dome_tex = visii.texture.create_from_file('dome_tex',skybox_random_selection)
+
+dome_tex = visii.texture.create_from_file('dome_tex',specific_skybox)
 visii.set_dome_light_texture(dome_tex)
 visii.set_dome_light_intensity(random.uniform(1.1,2))
 # visii.set_dome_light_intensity(1.15)
@@ -413,40 +415,33 @@ for i_obj in range(int(opt.nb_distractors)):
         print(f"Skipping {toy_to_load}, not a directory.")
 
 if opt.path_single_obj is not None:
-    for i_object in range(opt.nb_objects):
-        model_info_path = os.path.dirname(opt.path_single_obj) + '/model_info.json'
 
-        model_info_path = os.path.join(os.path.dirname(opt.path_single_obj), 'model_info.json')
-        model_info_path = model_info_path.replace('/', '\\')
-        if not os.path.exists(model_info_path):
-            model_info_path = None
+    toy_to_load = opt.path_single_obj
+    obj_name = os.path.basename(os.path.normpath(toy_to_load))
+    obj_to_load = os.path.join(toy_to_load, obj_name + ".obj")
+    texture_to_load = os.path.join(toy_to_load, obj_name + ".png")
 
-        adding_mesh_object(f"single_obj_{i_object}",
-                           opt.path_single_obj,
-                           None,
-                           model_info_path,
-                           scale=opt.scale,
-                           debug=opt.debug)
+    for i in range(opt.nb_objects):
+        name = f"cracker_60"
+        adding_mesh_object(name,obj_to_load, texture_to_load, scale=1, debug=opt.debug)
 else:
     google_content_folder = glob.glob(os.path.join(opt.objs_folder,"*/"))
+    # Select unique toys
+    selected_toys = random.sample(google_content_folder, int(opt.nb_objects))
 
-    for i_obj in range(int(opt.nb_objects)):
-        toy_to_load = google_content_folder[random.randint(0, len(google_content_folder) - 1)]
-
-        if os.path.isdir(toy_to_load):            
-
-            # 'toy_to_load' is now guaranteed to be a directory
+    for i_obj, toy_to_load in enumerate(selected_toys):
+        if os.path.isdir(toy_to_load):
             obj_name = os.path.basename(os.path.normpath(toy_to_load))
 
-            obj_to_load      = os.path.join(toy_to_load, obj_name + ".obj")
-            texture_to_load  = os.path.join(toy_to_load, obj_name + ".jpg")
-            model_info_path  = os.path.join(toy_to_load, obj_name + ".json")
+            obj_to_load = os.path.join(toy_to_load, obj_name + ".obj")
+            texture_to_load = os.path.join(toy_to_load, obj_name + ".jpg")
+            model_info_path = os.path.join(toy_to_load, obj_name + ".json")
             name = f"{obj_name}_{i_obj}"
 
             print("obj_name:", obj_name)
             print("obj_to_load:", obj_to_load)
 
-            adding_mesh_object(name, obj_to_load, texture_to_load, model_info_path, scale=opt.scale, debug=opt.debug)
+            adding_mesh_object(name, obj_to_load, texture_to_load, model_info_path, scale=0.001, debug=opt.debug)
 
         # p.applyExternalTorque(id_pybullet,-1,
         #     [   random.uniform(-force_rand,force_rand),
@@ -522,7 +517,7 @@ plane6_body = p.createMultiBody(
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # #
-
+print("names to export", names_to_export)
 
 export_to_ndds_folder_settings_files(
     opt.outf,
