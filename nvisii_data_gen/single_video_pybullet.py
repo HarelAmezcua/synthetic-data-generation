@@ -51,7 +51,7 @@ parser.add_argument(
 )
 parser.add_argument(
     '--path_single_obj',
-     default=os.path.join(os.path.dirname(__file__), 'single_objects\\Crackers'),
+     default=os.path.join(os.path.dirname(__file__), '__pycache__\\single_objects\\Crackers'),
     help='If you have a single obj file, path to the obj directly.'
 )
 parser.add_argument(
