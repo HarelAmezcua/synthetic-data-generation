@@ -51,7 +51,7 @@ parser.add_argument(
 )
 parser.add_argument(
     '--path_single_obj',
-     default=os.path.join(os.path.dirname(__file__), '__pycache__\\single_objects\\Crackers'),
+     default=os.path.join(os.path.dirname(__file__), 'single_objects\Mustard'),
     help='If you have a single obj file, path to the obj directly.'
 )
 parser.add_argument(
@@ -76,7 +76,7 @@ parser.add_argument(
 )
 parser.add_argument(
     '--nb_distractors',
-    default=0,
+    default=10,
     help = "how many objects"
 )
 parser.add_argument(
@@ -399,6 +399,7 @@ def adding_mesh_object(
         add_cuboid(entity_name, scale=scale, debug=debug)
 
 google_content_folder = glob.glob(os.path.join(opt.objs_folder_distrators, "*/"))
+print("google_content_folder:", google_content_folder)
 
 for i_obj in range(int(opt.nb_distractors)):
 
@@ -423,7 +424,7 @@ if opt.path_single_obj is not None:
 
     for i in range(opt.nb_objects):
         name = f"cracker_60"
-        adding_mesh_object(name,obj_to_load, texture_to_load, scale=1, debug=opt.debug)
+        adding_mesh_object(name,obj_to_load, texture_to_load, scale=opt.scale, debug=opt.debug)
 else:
     google_content_folder = glob.glob(os.path.join(opt.objs_folder,"*/"))
     # Select unique toys

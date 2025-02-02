@@ -62,7 +62,7 @@ You can simply use `--path_single_obj` to load your own 3d model. But there are 
 
 ## Modifying the code to load your object
 
-The script loads 3d models that are expressed in the format that was introduced by YCB dataset. 
+The script loads 3d models that are expressed in the format that was introduced by YCB dataset.
 But it is fairly easy to change the script to load your own 3d model, [NViSII](https://github.com/owl-project/NVISII) allows you to load different format 
 as well, not just `obj` files. In `single_video_pybullet.py` find the following code: 
 
@@ -88,9 +88,6 @@ You can change the `obj_to_load` and `texture_to_load` to match your data format
 `visii.mesh.create_from_file` is the function that is used to load the data, this can load different file format. The rest of that function also loads the right texture as well as applying a material. The function also creates a collision mesh to make the object move. 
 
 
-
-
-
 ## Updates
 
 - 11/01/2022: Added the possility to load a single object with `--path_single_obj`. Just give the direct path to the object. 
@@ -99,7 +96,6 @@ If the obj file is complex, it will break the object into sub components,
 so you might not have the projected cuboid, and you will get each pose of the different components with the cuboid. 
 Be careful using this one, make sure your understand the implications. 
 TODO: track the cuboid of the import_scene from nvisii.    
-
 
 ## Citation
 
