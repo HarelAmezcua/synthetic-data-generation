@@ -1,0 +1,11 @@
+# Ignore Python cache files
+nvisii_data_gen/__pycache__/
+
+# Ignore Google scanned models
+nvisii_data_gen/google_scanned_models/
+
+# Ignore Mustard object in single_objects
+nvisii_data_gen/single_objects/Mustard/
+
+# Ignore output folder
+output/
