@@ -22,7 +22,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument(
     '--spp',
-    default=800,
+    default=100,
     type=int,
     help = "number of sample per pixel, higher the more costly"
 )
@@ -145,10 +145,24 @@ parser.add_argument(
 )
 
 parser.add_argument(
+    '--hdri_number',
+    type=int,
+    help = "hdri number",
+    default= 1
+)
+
+parser.add_argument(
     '--debug',
     action='store_true',
     default=False,
     help="Render the cuboid corners as small spheres. Only for debugging purposes, do not use for training!"
+)
+
+parser.add_argument(
+    '--initial_index',
+    type=int,
+    default=0,
+    help="Initial index for the output files."
 )
 
 opt = parser.parse_args()
@@ -229,10 +243,17 @@ visii.set_camera_entity(camera)
 
 # lets turn off the ambiant lights
 # load a random skybox
-#skyboxes = glob.glob(f'{opt.skyboxes_folder}/*.hdr')
-#skybox_random_selection = skyboxes[random.randint(0,len(skyboxes)-1)]
-specific_skybox = f"{opt.skyboxes_folder}/autumn_field_puresky_1k.hdr"
+skyboxes = glob.glob(f'{opt.skyboxes_folder}/*.hdr')
+specific_skybox = skyboxes[random.randint(0,len(skyboxes)-1)]
+#specific_skybox = f"{opt.skyboxes_folder}/autumn_field_puresky_1k.hdr"
 
+"""skyboxes = glob.glob(f'{opt.skyboxes_folder}/*.hdr')
+if opt.hdri_number < len(skyboxes):
+    specific_skybox = skyboxes[opt.hdri_number]
+else:
+    specific_skybox = skyboxes[0]  # Default to the first skybox if the index is out of range"""
+
+#print(f"Using skybox: {specific_skybox}")
 
 dome_tex = visii.texture.create_from_file('dome_tex',specific_skybox)
 visii.set_dome_light_texture(dome_tex)
@@ -399,7 +420,6 @@ def adding_mesh_object(
         add_cuboid(entity_name, scale=scale, debug=debug)
 
 google_content_folder = glob.glob(os.path.join(opt.objs_folder_distrators, "*/"))
-print("google_content_folder:", google_content_folder)
 
 for i_obj in range(int(opt.nb_distractors)):
 
@@ -423,7 +443,7 @@ if opt.path_single_obj is not None:
     texture_to_load = os.path.join(toy_to_load, obj_name + ".png")
 
     for i in range(opt.nb_objects):
-        name = f"cracker_60"
+        name = f"Mustard"
         adding_mesh_object(name,obj_to_load, texture_to_load, scale=opt.scale, debug=opt.debug)
 else:
     google_content_folder = glob.glob(os.path.join(opt.objs_folder,"*/"))
@@ -518,7 +538,7 @@ plane6_body = p.createMultiBody(
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # #
-print("names to export", names_to_export)
+#print("names to export", names_to_export)
 
 export_to_ndds_folder_settings_files(
     opt.outf,
@@ -529,7 +549,7 @@ export_to_ndds_folder_settings_files(
 )
 
 i_frame = -1
-i_render = 0
+i_render = opt.initial_index
 
 while True:
     p.stepSimulation()
@@ -592,7 +612,7 @@ while True:
 
         visii.sample_time_interval((1,1))
 
-        visii.render_data_to_file(
+        """visii.render_data_to_file(
             width=opt.width,
             height=opt.height,
             start_frame=0,
@@ -600,7 +620,7 @@ while True:
             bounce=int(0),
             options="entity_id",
             file_path = f"{opt.outf}/{str(i_render).zfill(5)}.seg.exr"
-        )
+        )"""
         segmentation_mask = visii.render_data(
             width=int(opt.width),
             height=int(opt.height),
@@ -621,7 +641,8 @@ while True:
             segmentation_mask=segmentation_mask,
             compute_visibility_fraction=opt.visibility_fraction,
         )
-        visii.render_data_to_file(
+        
+        """visii.render_data_to_file(
             width=opt.width,
             height=opt.height,
             start_frame=0,
@@ -629,7 +650,7 @@ while True:
             bounce=int(0),
             options="depth",
             file_path = f"{opt.outf}/{str(i_render).zfill(5)}.depth.exr"
-        )
+        )"""
 
         i_render +=1
 
