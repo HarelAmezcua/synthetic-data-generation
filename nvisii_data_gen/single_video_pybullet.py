@@ -22,7 +22,7 @@ parser = argparse.ArgumentParser()
 
 parser.add_argument(
     '--spp',
-    default=100,
+    default=50,
     type=int,
     help = "number of sample per pixel, higher the more costly"
 )
@@ -51,7 +51,7 @@ parser.add_argument(
 )
 parser.add_argument(
     '--path_single_obj',
-     default=os.path.join(os.path.dirname(__file__), 'single_objects\Mustard'),
+     default=os.path.join(os.path.dirname(__file__), 'single_objects\Ketchup'),
     help='If you have a single obj file, path to the obj directly.'
 )
 parser.add_argument(
@@ -76,7 +76,7 @@ parser.add_argument(
 )
 parser.add_argument(
     '--nb_distractors',
-    default=10,
+    default=5,
     help = "how many objects"
 )
 parser.add_argument(
@@ -129,7 +129,7 @@ parser.add_argument(
 
 parser.add_argument(
     '--focal-length',
-    default=None,
+    default=1,
     type=float,
     help = "focal length of the camera"
 )
@@ -205,10 +205,10 @@ if opt.focal_length:
         transform = visii.transform.create("camera"),
         camera = visii.camera.create_from_intrinsics(
             name = "camera",
-            fx=opt.focal_length,
-            fy=opt.focal_length,
-            cx=(opt.width / 2),
-            cy=(opt.height / 2),
+            fx=808.699859964307,
+            fy=809.589244472111,
+            cx=(322.814181940711),
+            cy=(245.745667049578),
             width=opt.width,
             height=opt.height
         )
@@ -443,7 +443,7 @@ if opt.path_single_obj is not None:
     texture_to_load = os.path.join(toy_to_load, obj_name + ".png")
 
     for i in range(opt.nb_objects):
-        name = f"Mustard"
+        name = f"Ketchup"
         adding_mesh_object(name,obj_to_load, texture_to_load, scale=opt.scale, debug=opt.debug)
 else:
     google_content_folder = glob.glob(os.path.join(opt.objs_folder,"*/"))

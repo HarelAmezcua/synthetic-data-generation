@@ -388,15 +388,11 @@ def random_material(
             obj_mat.set_normal_map_texture(tex_n)
 
 
-####
-
-
 random_material.textures = None
 
 ########################################
 # ANIMATION RANDOMIZATION 
 ########################################
-
 
 
 def distance(v0,v1=[0,0,0]):

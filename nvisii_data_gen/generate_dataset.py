@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import random 
+"""import random 
 import subprocess
 import os
 
@@ -20,4 +20,31 @@ for i in range(0, 4000):
 		'--hdri_number', str(i),
 		'--nb_distractors', str(random.randint(0, 10)),	
 	]
-	subprocess.call(to_call)
+	subprocess.call(to_call)"""
+
+
+import subprocess
+import random
+import gc
+
+relative_path = r"C:\github\synthetic-data-generation\nvisii_data_gen\single_video_pybullet.py"
+num_frames_per_hdri = 10  # Adjust this value as needed
+
+for i in range(2630, 50000):
+    to_call = [
+        "C:/dope_venv/Scripts/python.exe", relative_path,
+        '--spp', '10',
+        '--nb_frames', str(i * num_frames_per_hdri + num_frames_per_hdri),
+        '--nb_objects', '1',  # str(int(random.uniform(50,75))),
+        '--scale', '0.01',
+        '--outf', f"dataset",
+        '--initial_index', str(i * num_frames_per_hdri),
+        '--hdri_number', str(i),
+        '--nb_distractors', str(random.randint(0, 10)),
+    ]
+    
+    subprocess.run(to_call)
+    
+    # Explicitly free memory
+    del to_call
+    gc.collect()
