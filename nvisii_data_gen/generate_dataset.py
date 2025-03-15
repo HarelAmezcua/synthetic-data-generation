@@ -30,7 +30,7 @@ import gc
 relative_path = r"C:\github\synthetic-data-generation\nvisii_data_gen\single_video_pybullet.py"
 num_frames_per_hdri = 10  # Adjust this value as needed
 
-for i in range(2630, 50000):
+for i in range(3610, 50000):
     to_call = [
         "C:/dope_venv/Scripts/python.exe", relative_path,
         '--spp', '10',
